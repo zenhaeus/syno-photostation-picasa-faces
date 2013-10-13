@@ -14,3 +14,74 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
+This programm is designed and tested with Synology Photos Station 6 Beta (PS) to 
+handle already tagged persons in image exif-data, which where tagged by free
+Google software Picasa.
+
+Each run will read new indexed images from PS databases (common and users) 
+since last run. Then it will look for Picasa XMP person tags. If found
+such information, it will write the information to the PS database and although
+as Microsoft XMP tags, which are used by Photostation, back to the file.
+
+Notices:
+
+- Each file with Picasa tags will be modified with exiv2 programm which is 
+  installed in the DS Firmware. Images maybe broken afterwards so make a 
+  BACKUP before using.
+  
+- Database schemata of PS can be changed by Synology, script will 
+  not work correct and damage the database. Although make a backup 
+  of the PS databases or you will have to reindex again.
+
+- Report issues at https://syno-photostation-picasa-faces.googlecode.com/
+
+How to use:
+
+1.  Wait until DiskStation have finished the indexing of all images. Only
+    already indexed images will be noticed by the script.
+
+2.  Copy picasaXMPFaceToDatabaseAndXMPMP.php to your DiskStation
+
+3.  Make a backup of your photos in shared-folder /photo and /home/photo
+
+4.  Backup your databases.
+
+5.  Go to Webinterface of your DiskStation and enable SSH-service
+    Control-Panel -> Terminal
+   
+6.  For Windows User download free SSH-Client Putty.exe
+
+7.  Login via ssh client with connection string root@<IP-DISKSTATION> and your admin-password
+
+8.  Change shell prompt for better overview:
+
+    PS1="\u@\h:\w>"
+
+9.  Copy the php-script to this directory:
+
+    cp <PATH-TO-FILE>/picasaXMPFaceToDatabaseAndXMP.php /volume1/@appstore/PhotoStation/photo_scripts/
+   
+    <PATH-TO-FILE> normally something like: /volume1/homes/<USERNAME>/
+   
+    Notice: I have no idea yet why the script is working correctly only in this directory 
+    and can not lay in other directories
+   
+10. Change to directory:
+	
+    cd /volume1/@appstore/PhotoStation/photo_scripts/
+   
+11. Run script:
+
+	php picasaXMPFaceToDatabaseAndXMPMP.php
+	
+12. If script execution timeout (for example on very first run) just execute again
+
+13. Enjoy you're Picasa faces in PS.
+
+14. You can re-run the script each time you have uploaded new images and DS have 
+    finished the indexing of these files.
+    
+Personal Notice:
+
+Please excuse my poor English. 
