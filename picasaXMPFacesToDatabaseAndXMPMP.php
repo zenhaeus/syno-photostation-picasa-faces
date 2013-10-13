@@ -1,7 +1,7 @@
 <?php
 /**
  *	Picasa XMP- Faces to Photo Station database and XMP.MP
- *  Copyright (C) 2013  Johannes "DerOetzi" Ott <http://johannes-ott.net>
+ *  Copyright (C) 2013  Johannes "DerOetzi" Ott <DerOetzi@gmail.com>
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ echo <<< GNU_LICENSE
 
 Picasa XMP- Faces to Photo Station database and XMP.MP
 
-Copyright (C) 2013  Johannes "DerOetzi" Ott <http://johannes-ott.net>
+Copyright (C) 2013  Johannes "DerOetzi" Ott <http://DerOetzi@gmail.com>
 
 This program comes with ABSOLUTELY NO WARRANTY;
 This is free software, and you are welcome to redistribute it
