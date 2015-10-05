@@ -1,0 +1,1 @@
+This script is to read XMP-exif-data, which is written by Picasa to save tagged persons and add it to Synology Photo Station database.
